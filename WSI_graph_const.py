@@ -29,10 +29,10 @@ from torch_geometric.utils import convert
 ### CLAM Path
 clam_path = 'path/to/Patch-GCN-dir/'
 sys.path.append(clam_path)
-from models.resnet_custom import resnet50_baseline
-from wsi_core.WholeSlideImage import WholeSlideImage
-from utils.utils import *
-from datasets.wsi_dataset import Wsi_Region
+# from models.resnet_custom import resnet50_baseline
+# from wsi_core.WholeSlideImage import WholeSlideImage
+# from utils.utils import *
+# from datasets.wsi_dataset import Wsi_Region
 
 
 class Hnsw:

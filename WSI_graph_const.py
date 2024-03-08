@@ -102,14 +102,15 @@ def createDir_h5toPyG(h5_path, save_path):
     for h5_fname in pbar:
         pbar.set_description('%s - Creating Graph' % (h5_fname[:12]))
 
-        try:
+        if True:
+        # try:
             wsi_h5 = h5py.File(os.path.join(h5_path, h5_fname), "r")
             G = pt2graph(wsi_h5)
             torch.save(G, os.path.join(save_path, h5_fname[:-3]+'.pt'))
             wsi_h5.close()
-        except OSError:
-            pbar.set_description('%s - Broken H5' % (h5_fname[:12]))
-            print(h5_fname, 'Broken')
+        # except OSError:
+        #     pbar.set_description('%s - Broken H5' % (h5_fname[:12]))
+        #     print(h5_fname, 'Broken')
 #%%
 h5_path = '/scratch/nmoreau/features/GCN/pancreas/h5_files/'
 save_path = '/scratch/nmoreau/features/GCN/pancreas/graph_files/'
